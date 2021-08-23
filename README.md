@@ -1,27 +1,15 @@
 # Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 12.2.2.
 
-## Development server
+Esse projeto é o front-end de um CRUD básico de biblioteca.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instalação
 
-## Code scaffolding
+Baixe o projeto, defina uma pasta e abra um powershell, navegue até a pasta através do comando `cd` e execute o comando `npm install`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Servidor
 
-## Build
+Após completar a instalação do passo a passo acima, temos que iniciar o servidor do projeto para que possamos navegar entre as abas e realizar as operações, lembrando que para realizar as operações do CRUD, é necessário o servidor do laravel rodando.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute `ng serve` para um servidor de desenvolvimento. Acesse a URL `http://localhost:4200`, feito isso basta escolher entre os menus para acessar alguma determinada tabela.
