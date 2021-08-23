@@ -1,0 +1,106 @@
+<form #fLivros="ngForm">
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite o autor</label>
+    <input
+      type="text"
+      class="form-control"
+      id="autor"
+      placeholder="Digite o autor"
+      [(ngModel)]="cadastroLivros.autor"
+      name="autor"
+    />
+  </div>
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite o genero literario</label>
+    <input
+      type="text"
+      class="form-control"
+      id="genero"
+      placeholder="Digite o genero literario"
+      [(ngModel)]="cadastroLivros.genero"
+      name="genero"
+    />
+  </div>
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite a editora</label>
+    <input
+      type="text"
+      class="form-control"
+      id="editora"
+      placeholder="Digite a editora"
+      [(ngModel)]="cadastroLivros.editora"
+      name="editora"
+    />
+  </div>
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite o titulo</label>
+    <input
+      type="text"
+      class="form-control"
+      id="titulo"
+      placeholder="Digite o titulo"
+      [(ngModel)]="cadastroLivros.titulo"
+      name="titulo"
+    />
+  </div>
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite a data de lancamento</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lancamento"
+      placeholder="Digite a data de lancamento"
+      [(ngModel)]="cadastroLivros.lancamento"
+      name="lancamento"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-success mt-3 mb-3 ml-5"
+    (click)="criarAtualizarlivros(fLivros)"
+  >
+    Adicionar
+  </button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Genêro Literário</th>
+      <th scope="col">Editora</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Lançamento</th>
+
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of livros">
+      <th scope="row">{{ l.id }}</th>
+      <td>{{ l.autor }}</td>
+      <td>{{ l.genero }}</td>
+      <td>{{ l.editora }}</td>
+      <td>{{ l.titulo }}</td>
+      <td>{{ l.lancamento }}</td>
+
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger mr-3"
+          (click)="apagaLivros(l.id)"
+        >
+          Apagar
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          (click)="selecionaLivros(l)"
+        >
+          Atualizar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

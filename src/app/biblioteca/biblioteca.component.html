@@ -1,0 +1,52 @@
+<form #fGenero="ngForm">
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite o Genero Literario</label>
+    <input
+      type="text"
+      class="form-control"
+      id="genero"
+      placeholder="Genero Literario"
+      [(ngModel)]="cadastroGenero.genero"
+      name="genero"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-success mt-3 mb-3 ml-5"
+    (click)="criarAtualizargenero(fGenero)"
+  >
+    Adicionar
+  </button>
+</form>
+
+<table class="table ml-5 w-75">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Genero Literario</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of biblioteca">
+      <th scope="row">{{ b.id }}</th>
+      <td>{{ b.genero }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger mr-3"
+          (click)="apagaGenero(b.id)"
+        >
+          Apagar
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          (click)="selecionaGenero(b)"
+        >
+          Atualizar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

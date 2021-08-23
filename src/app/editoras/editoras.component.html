@@ -1,0 +1,52 @@
+<form #fEditora="ngForm">
+  <div class="form-group mt-3 mb-3 ml-5 w-75">
+    <label for="formGroupExampleInput">Digite a Editora</label>
+    <input
+      type="text"
+      class="form-control"
+      id="editora"
+      placeholder="Nome da Editora"
+      [(ngModel)]="cadastroEditora.editora"
+      name="editora"
+    />
+  </div>
+  <button
+    type="button"
+    class="btn btn-success mt-3 mb-3 ml-5"
+    (click)="criarAtualizareditora(fEditora)"
+  >
+    Adicionar
+  </button>
+</form>
+
+<table class="table ml-5 w-75">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Editora</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of editora">
+      <th scope="row">{{ e.id }}</th>
+      <td>{{ e.editora }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger mr-3"
+          (click)="apagaEditora(e.id)"
+        >
+          Apagar
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          (click)="selecionaEditora(e)"
+        >
+          Atualizar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
